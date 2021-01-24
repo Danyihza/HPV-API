@@ -44,6 +44,28 @@ class Auth extends CI_Controller
 
         echo json_encode($output);
     }
+
+    public function checkUser()
+    {
+        $email = $this->input->get('email');
+        $user = $this->auth->checkUser($email);
+        if ($user) {
+            $output = [
+                'status' => 1,
+                'message' => 'User Registered',
+                'data' => $user
+            ];
+            
+            echo json_encode($output);
+        } else {
+            $output = [
+                'status' => 0,
+                'message' => 'User Not Registered'
+            ];
+
+            echo json_encode($output);
+        }
+    }
 }
 
 /* End of file Register.php */
