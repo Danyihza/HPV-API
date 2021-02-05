@@ -9,6 +9,11 @@ class Article_model extends CI_Model {
         return $this->db->get('tb_articles')->result_array();
     }
 
+    public function getArticleById($id)
+    {
+        return $this->db->get_where('tb_articles', ['id_article' => $id])->row_array();
+    }
+
 }
 
 /* End of file Article_model.php */

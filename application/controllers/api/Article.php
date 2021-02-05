@@ -24,6 +24,17 @@ class Article extends CI_Controller {
         echo json_encode($output);
     }
 
+    public function getArticleById($id)
+    {
+        $data = $this->article->getArticleById($id);
+        $output = [
+            'status' => 200,
+            'message' => "Article with id $id was successfully retrieved",
+            'data' => $data
+        ];
+        echo json_encode($output);
+    }
+
 }
 
 /* End of file Article.php */
