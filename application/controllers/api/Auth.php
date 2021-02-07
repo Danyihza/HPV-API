@@ -66,6 +66,7 @@ class Auth extends CI_Controller
             echo json_encode($output);
         }
     }
+    
 }
 
 /* End of file Register.php */
