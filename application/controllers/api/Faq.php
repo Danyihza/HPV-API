@@ -18,7 +18,7 @@ class Faq extends CI_Controller {
     public function getFaqByID()
     {
         $id = $this->input->get('id');
-        $data = $this->db->get_where('tb_faq', ['id_faq' => $id])->result_array();
+        $data = $this->db->get_where('tb_faq', ['id_faq' => $id])->row_array();
         $output = [
             'status' => 200,
             'message' => 'Data Retrieved',
