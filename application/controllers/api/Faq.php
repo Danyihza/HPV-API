@@ -15,6 +15,19 @@ class Faq extends CI_Controller {
         echo json_encode($output);
     }
 
+    public function getFaqByID()
+    {
+        $id = $this->input->get('id');
+        $data = $this->db->get_where('tb_faq', ['id_faq' => $id])->result_array();
+        $output = [
+            'status' => 200,
+            'message' => 'Data Retrieved',
+            'data' => $data
+        ];
+        
+        echo json_encode($output);
+    }
+
 }
 
 /* End of file Faq.php */
