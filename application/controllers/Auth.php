@@ -25,7 +25,7 @@ class Auth extends CI_Controller
                     'nama' => $data['nama_admin'],
                 ];
                 $this->session->set_userdata($session);
-                redirect('Home');
+                redirect('Home/dashboard');
             } else {
                 $this->session->set_flashdata('error', 'Wrong Password');
                 redirect('Auth');
